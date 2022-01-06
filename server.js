@@ -14,7 +14,7 @@ app.use((req, res, next) => {
 });
 
 /** Routes */
-app.use("/fetch-me", (req, res) => {
+app.post("/fetch-me", (req, res) => {
   // Analyze your request / mutate your response.
 
   return res.status(499).json({
@@ -22,6 +22,10 @@ app.use("/fetch-me", (req, res) => {
     cookies: req.cookies,
     message: "Intentional error to prevent further requests",
   });
+});
+
+app.get("/", (req, res) => {
+  res.status(200).send({ success: true });
 });
 
 /** Error handling */
