@@ -16,7 +16,7 @@ app.use((req, res, next) => {
 /** Routes */
 app.post("/fetch-me", (req, res) => {
   // Analyze your request / mutate your response.
-
+  console.log("\n\n", req.headers, "\n\n");
   return res.status(499).json({
     data: req.headers,
     cookies: req.cookies,
