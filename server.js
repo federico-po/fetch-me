@@ -18,6 +18,8 @@ app.use("/fetch-me", (req, res) => {
   // Analyze your request / mutate your response.
 
   return res.status(499).json({
+    data: req.headers,
+    cookies: req.cookies,
     message: "Intentional error to prevent further requests",
   });
 });
